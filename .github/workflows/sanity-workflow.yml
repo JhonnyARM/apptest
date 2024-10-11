@@ -1,5 +1,4 @@
 # This workflow targets Appium execution for Android only
-
 name: Python SDK Test workflow
 
 on:
