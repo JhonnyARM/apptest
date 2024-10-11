@@ -1,8 +1,11 @@
 # This workflow targets Appium execution for Android only
 
-name: Python SDK Test workflow on workflow_dispatch
+name: Python SDK Test workflow
 
 on:
+  push:
+    branches:
+      - main # Cambia esto a la rama que prefieras
   workflow_dispatch:
     inputs:
       commit_sha:
