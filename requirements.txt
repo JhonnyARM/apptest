@@ -9,3 +9,4 @@ pytest-variables
 pytest-selenium
 Appium-Python-Client
 browserstack-sdk
+allure-pytest
