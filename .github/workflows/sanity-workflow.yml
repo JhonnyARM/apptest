@@ -1,3 +1,10 @@
+name: Python SDK Test workflow
+
+on:
+  push:
+    branches:
+      - main # Reemplaza con la rama de tu elección
+
 jobs:
   comment-run:
     runs-on: ubuntu-latest # Especifica solo Ubuntu
