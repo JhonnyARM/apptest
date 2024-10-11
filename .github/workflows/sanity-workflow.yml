@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       commit_sha:
-        description: 'The full commit id to build'
+        description: "The full commit id to build"
         required: true
 
 jobs:
@@ -17,8 +17,8 @@ jobs:
       fail-fast: false
       max-parallel: 3
       matrix:
-        python: ['3.7', '3.10', '3.11']
-        os: [ macos-latest, windows-latest, ubuntu-latest ]
+        python: ["3.7", "3.10", "3.11"]
+        os: [macos-latest, windows-latest, ubuntu-latest]
     name: Pytest Appium Repo ${{ matrix.python }} - ${{ matrix.os }} Sample
     env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -59,12 +59,12 @@ jobs:
         run: |
           cd android
           browserstack-sdk pytest -s bstack_sample.py
-      
+
       - name: run local tests in parallel on android
         run: |
           cd android
           browserstack-sdk pytest -s bstack_sample_local.py --browserstack.app "./LocalSample.apk"
-      
+
       - name: run tests in parallel on ios
         run: |
           cd ios
