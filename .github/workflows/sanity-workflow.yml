@@ -31,12 +31,21 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      # Instalar Allure manualmente desde los binarios
+      - name: Install Allure
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.tgz
+          tar -zxvf allure-2.21.0.tgz
+          sudo mv allure-2.21.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+
       # Cambiar a la carpeta android y crear allure-results
       - name: Create allure-results directory inside android
         run: |
           cd android
           mkdir -p allure-results
 
+      # Ejecutar las pruebas en Android
       - name: Run tests in parallel on Android
         run: |
           cd android
